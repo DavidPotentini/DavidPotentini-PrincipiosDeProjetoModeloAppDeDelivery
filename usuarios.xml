@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<usuarios>
+    <usuario>
+        <nome>Carlos</nome>
+        <dataDeRegistro>2024-12-01</dataDeRegistro>
+        <horaDeRegistro>19:28:05.360385200</horaDeRegistro>
+        <codigoDoPedido>5</codigoDoPedido>
+        <nomeOperacao>Calculando Pedido</nomeOperacao>
+    </usuario>
+</usuarios>
