@@ -5,7 +5,7 @@ import org.example.ModuloBase.*;
 import org.example.ModuloDescontosPedido.CalculadoraDeDescontoPedidosService;
 import org.example.ModuloDescontosTaxaDeEntrega.CalculadoraDeDescontoEntregaService;
 import org.example.ModuloRegistroDeLog.*;
-
+import ModuloConexaoBancoDeDados.*;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
@@ -31,7 +31,7 @@ public class Main {
         servicePedido.calcularDesconto(pedido);
 
 
-        LogService logService = new LogService(new LogXML());
+        LogService logService = new LogService(new LogDB(new ConexaoSQLite()));
         IPedido pedidoComLogDecorator = new PedidoComLogDecorator(pedido, logService);
 
         System.out.println(pedidoComLogDecorator.getValorPedido());

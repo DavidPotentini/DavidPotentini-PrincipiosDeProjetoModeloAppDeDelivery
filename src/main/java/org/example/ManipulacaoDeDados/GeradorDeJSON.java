@@ -9,7 +9,7 @@ import org.example.ModuloRegistroDeLog.DadosParaRegistro;
 import java.io.FileWriter;
 
 
-public class GeradorDeJSON implements IGeradorDeDocumentos {
+public class GeradorDeJSON implements IManipuladorDeDadosParaLog {
     private Gson gson;
     public GeradorDeJSON(){
         this.gson =  new GsonBuilder()

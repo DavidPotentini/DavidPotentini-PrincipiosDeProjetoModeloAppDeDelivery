@@ -1,15 +1,15 @@
 package org.example.ModuloRegistroDeLog;
 
-import org.example.ManipulacaoDeDados.GeradorDeDocumentosService;
+import org.example.ManipulacaoDeDados.ManipuladorDeDadosParaLogService;
 import org.example.ManipulacaoDeDados.GeradorDeXML;
 
 import java.io.FileWriter;
 
 public class LogXML implements ILog{
-    GeradorDeDocumentosService geradorDeDocumentos;
+    ManipuladorDeDadosParaLogService geradorDeDocumentos;
 
     public LogXML(){
-        geradorDeDocumentos = new GeradorDeDocumentosService(new GeradorDeXML());
+        geradorDeDocumentos = new ManipuladorDeDadosParaLogService(new GeradorDeXML());
     }
 
     @Override

@@ -1,6 +1,6 @@
 <registro>
-    <nome>Balcão PDV 1</nome>
-    <dataRegistro>Tue Dec 03 22:37:19 BRT 2024</dataRegistro>
+    <nome>Fulano de tal</nome>
+    <dataRegistro>Tue Dec 03 23:15:35 BRT 2024</dataRegistro>
     <codigo>1</codigo>
     <operacao>Calculo do valor total do pedido (getValorPedido())</operacao>
 </registro>

@@ -4,7 +4,7 @@ import org.example.ModuloRegistroDeLog.DadosParaRegistro;
 
 import java.io.FileWriter;
 
-public class GeradorDeXML implements IGeradorDeDocumentos {
+public class GeradorDeXML implements IManipuladorDeDadosParaLog {
 
     @Override
     public void gerar(DadosParaRegistro dados){

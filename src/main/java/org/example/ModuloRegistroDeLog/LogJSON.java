@@ -1,13 +1,13 @@
 package org.example.ModuloRegistroDeLog;
 
-import org.example.ManipulacaoDeDados.GeradorDeDocumentosService;
+import org.example.ManipulacaoDeDados.ManipuladorDeDadosParaLogService;
 import org.example.ManipulacaoDeDados.GeradorDeJSON;
 
 public class LogJSON implements ILog{
-    private GeradorDeDocumentosService geradorDeDocumentos;
+    private ManipuladorDeDadosParaLogService geradorDeDocumentos;
 
     public LogJSON(){
-        geradorDeDocumentos = new GeradorDeDocumentosService(new GeradorDeJSON());
+        geradorDeDocumentos = new ManipuladorDeDadosParaLogService(new GeradorDeJSON());
     }
 
     @Override

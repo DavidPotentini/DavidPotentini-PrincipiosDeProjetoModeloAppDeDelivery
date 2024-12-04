@@ -1,0 +1,6 @@
+org\example\ManipulacaoDeDados\InsersorDeDados.class
+org\example\ManipulacaoDeDados\IManipuladorDeDadosParaLog.class
+ModuloConexaoBancoDeDados\ConexaoSQLite.class
+org\example\ModuloRegistroDeLog\LogDB.class
+ModuloConexaoBancoDeDados\IConexaoDB.class
+org\example\ManipulacaoDeDados\ManipuladorDeDadosParaLogService.class
