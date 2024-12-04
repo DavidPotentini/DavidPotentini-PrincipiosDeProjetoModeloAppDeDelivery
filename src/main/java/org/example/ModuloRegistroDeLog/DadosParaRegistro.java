@@ -1,4 +1,5 @@
 package org.example.ModuloRegistroDeLog;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DadosParaRegistro {
@@ -26,7 +27,7 @@ public class DadosParaRegistro {
         return codigoDoPedido;
     }
 
-    public Date getdataEHoraDeRegistro() {
+    public Date getDataEHoraDeRegistro() {
         return dataEHoraDeRegistro;
     }
 

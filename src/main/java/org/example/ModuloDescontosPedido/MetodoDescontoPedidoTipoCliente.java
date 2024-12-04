@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MetodoDescontoPedidoTipoCliente implements IFormaDescontoPedido{
-    Map<String, Double> descontosPorTipoCliente = new HashMap<>();
+    private Map<String, Double> descontosPorTipoCliente = new HashMap<>();
 
     public MetodoDescontoPedidoTipoCliente() {
         descontosPorTipoCliente.put("Ouro", 0.3);

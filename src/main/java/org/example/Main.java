@@ -1,15 +1,11 @@
 package org.example;
 
-import com.google.gson.JsonObject;
 import org.example.ModuloBase.*;
 import org.example.ModuloDescontosPedido.CalculadoraDeDescontoPedidosService;
 import org.example.ModuloDescontosTaxaDeEntrega.CalculadoraDeDescontoEntregaService;
 import org.example.ModuloRegistroDeLog.*;
-import ModuloConexaoBancoDeDados.*;
+import org.example.ModuloConexaoBancoDeDados.*;
 
-import java.sql.Timestamp;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Date;
 
 public class Main {
@@ -31,7 +27,9 @@ public class Main {
         servicePedido.calcularDesconto(pedido);
 
 
-        LogService logService = new LogService(new LogDB(new ConexaoSQLite()));
+        //LogService logService = new LogService(new LogDB(new ConexaoSQLite()));
+        LogService logService = new LogService(new LogJSON());
+        //LogService logService = new LogService(new LogXML());
         IPedido pedidoComLogDecorator = new PedidoComLogDecorator(pedido, logService);
 
         System.out.println(pedidoComLogDecorator.getValorPedido());
@@ -40,14 +38,6 @@ public class Main {
 
         System.out.println(pedido.getDescontoConcedidoPedido());
 
-        System.out.println(pedido.getValorPedido());
 
-
-        //ILog log1 = new LogJSON();
-        //log1.escrever(new DadosParaRegistro(new Date(), 2));
-
-
-        //ILog log2 = new LogXML();
-        //log2.escrever(new DadosParaRegistro("Jose", "24/01/2002", "15 horas", 5, "Calculando Pedido"));
     }
 }

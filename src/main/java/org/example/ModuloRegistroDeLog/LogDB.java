@@ -3,11 +3,11 @@ package org.example.ModuloRegistroDeLog;
 
 import org.example.ManipulacaoDeDados.ManipuladorDeDadosParaLogService;
 import org.example.ManipulacaoDeDados.InsersorDeDados;
-import ModuloConexaoBancoDeDados.*;
+import org.example.ModuloConexaoBancoDeDados.*;
 
 public class LogDB implements ILog {
     
-    ManipuladorDeDadosParaLogService geradorDeDocumentos;
+    private ManipuladorDeDadosParaLogService geradorDeDocumentos;
 
     public LogDB(IConexaoDB conexaoDB){
         geradorDeDocumentos = new ManipuladorDeDadosParaLogService(new InsersorDeDados(conexaoDB));

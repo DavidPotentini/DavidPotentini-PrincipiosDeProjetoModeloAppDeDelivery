@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Map;
 
 public class MetodoDescontoPedidoTipoItem implements IFormaDescontoPedido{
-    Map<String, Double> descontosPorItem = new HashMap<>();
-    List<IFormaDescontoPedido> metodosDeDesconto = new ArrayList<>();
+    private Map<String, Double> descontosPorItem = new HashMap<>();
+    private List<IFormaDescontoPedido> metodosDeDesconto = new ArrayList<>();
 
     public MetodoDescontoPedidoTipoItem(){
         descontosPorItem.put("Alimentação", 0.05);

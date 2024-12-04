@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CalculadoraDeDescontoPedidosService {
-    List<IFormaDescontoPedido> metodosDeDesconto = new ArrayList<>();
+    private List<IFormaDescontoPedido> metodosDeDesconto = new ArrayList<>();
 
     public CalculadoraDeDescontoPedidosService(){
         metodosDeDesconto.add(new MetodoDescontoPedidoTipoItem());

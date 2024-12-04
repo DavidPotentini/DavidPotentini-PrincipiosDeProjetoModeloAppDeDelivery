@@ -6,7 +6,7 @@ import org.example.ManipulacaoDeDados.GeradorDeXML;
 import java.io.FileWriter;
 
 public class LogXML implements ILog{
-    ManipuladorDeDadosParaLogService geradorDeDocumentos;
+    private ManipuladorDeDadosParaLogService geradorDeDocumentos;
 
     public LogXML(){
         geradorDeDocumentos = new ManipuladorDeDadosParaLogService(new GeradorDeXML());

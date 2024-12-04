@@ -1,6 +1,6 @@
 {
-  "NomeDoUsuario": "Fulano de tal",
-  "DataEHoraDeRegistro": "Dec 2, 2024, 10:57:52 PM",
-  "CodigoDoPedido": 2,
+  "NomeDoUsuario": "Gerente",
+  "DataEHoraDeRegistro": "Dec 4, 2024, 7:45:01 AM",
+  "CodigoDoPedido": 1,
   "NomeOperacao": "Calculo do valor total do pedido (getValorPedido())"
 }

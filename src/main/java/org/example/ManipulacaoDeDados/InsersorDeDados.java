@@ -1,7 +1,7 @@
 
 package org.example.ManipulacaoDeDados;
 
-import ModuloConexaoBancoDeDados.*;
+import org.example.ModuloConexaoBancoDeDados.*;
 import org.example.ModuloRegistroDeLog.DadosParaRegistro;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -25,16 +25,16 @@ public class InsersorDeDados implements IManipuladorDeDadosParaLog{
             
             // Formatar a data
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-            String formattedDate = sdf.format(dados.getdataEHoraDeRegistro());
+            String dataFormatada = sdf.format(dados.getDataEHoraDeRegistro());
             
             stmt.setString(1, dados.getNomeDoUsuario());
-            stmt.setString(2, formattedDate);
+            stmt.setString(2, dataFormatada);
             stmt.setInt(3, dados.getCodigoDoPedido());
             stmt.setString(4, dados.getNomeOperacao());
 
             stmt.executeUpdate();
         } 
-        catch (SQLException e) {
+        catch (Exception e) {
             System.err.println("Erro ao gravar log no banco de dados: " + e.getMessage());
         }
     }

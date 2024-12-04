@@ -1,5 +1,5 @@
 
-package ModuloConexaoBancoDeDados;
+package org.example.ModuloConexaoBancoDeDados;
 
 import java.sql.Connection;
 
