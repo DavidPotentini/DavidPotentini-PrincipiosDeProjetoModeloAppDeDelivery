@@ -1,15 +1,10 @@
 package org.example;
 
 import com.google.gson.JsonObject;
-import org.example.ModuloBase.Cliente;
-import org.example.ModuloBase.Item;
-import org.example.ModuloBase.Pedido;
+import org.example.ModuloBase.*;
 import org.example.ModuloDescontosPedido.CalculadoraDeDescontoPedidosService;
 import org.example.ModuloDescontosTaxaDeEntrega.CalculadoraDeDescontoEntregaService;
-import org.example.ModuloRegistroDeLog.DadosParaRegistro;
-import org.example.ModuloRegistroDeLog.ILog;
-import org.example.ModuloRegistroDeLog.LogJSON;
-import org.example.ModuloRegistroDeLog.LogXML;
+import org.example.ModuloRegistroDeLog.*;
 
 
 import java.sql.Timestamp;
@@ -23,7 +18,7 @@ public class Main {
         Item item1 = new Item("Hamburguer", 2, 20.00, "Alimentação");
         Item item2 = new Item("Caderno", 1, 100.00, "Educação");
 
-        Pedido pedido = new Pedido(LocalDate.now(), cliente, new LogXML(), 1);
+        Pedido pedido = new Pedido(new Date(), cliente, 1);
         pedido.adicionarItem(item1);
         pedido.adicionarItem(item2);
 
@@ -35,11 +30,18 @@ public class Main {
         CalculadoraDeDescontoPedidosService servicePedido = new CalculadoraDeDescontoPedidosService();
         servicePedido.calcularDesconto(pedido);
 
+
+        LogService logService = new LogService(new LogXML());
+        IPedido pedidoComLogDecorator = new PedidoComLogDecorator(pedido, logService);
+
+        System.out.println(pedidoComLogDecorator.getValorPedido());
+
         System.out.println(pedido.getDescontoConcedidoEntrega());
 
         System.out.println(pedido.getDescontoConcedidoPedido());
 
         System.out.println(pedido.getValorPedido());
+
 
         //ILog log1 = new LogJSON();
         //log1.escrever(new DadosParaRegistro(new Date(), 2));
