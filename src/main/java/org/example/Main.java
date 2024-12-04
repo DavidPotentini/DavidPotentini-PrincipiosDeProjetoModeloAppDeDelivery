@@ -27,16 +27,18 @@ public class Main {
         servicePedido.calcularDesconto(pedido);
 
 
-        //LogService logService = new LogService(new LogDB(new ConexaoSQLite()));
-        LogService logService = new LogService(new LogJSON());
-        //LogService logService = new LogService(new LogXML());
-        IPedido pedidoComLogDecorator = new PedidoComLogDecorator(pedido, logService);
 
-        System.out.println(pedidoComLogDecorator.getValorPedido());
+        LogService logService1 = new LogService(new LogXML());
+        //LogService logService2 = new LogService(new LogJSON());
+        //LogService logService3 = new LogService(new LogDB(new ConexaoSQLite()));
 
-        System.out.println(pedido.getDescontoConcedidoEntrega());
+        IPedido pedidoComLogDecorator = new PedidoComLogDecorator(pedido, logService1);
 
-        System.out.println(pedido.getDescontoConcedidoPedido());
+        System.out.println("Valor total do pedido: " + pedidoComLogDecorator.getValorPedido());
+
+        System.out.println("Desconto concedido sobre o valor da entrega: "+ pedido.getDescontoConcedidoEntrega());
+
+        System.out.println("Desconto concedido sobre o valor do pedido: " + pedido.getDescontoConcedidoPedido());
 
 
     }
